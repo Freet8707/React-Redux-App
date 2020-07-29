@@ -17,13 +17,14 @@ export const reducer = (state = initialState, action) => {
         case FETCHING_GHIBLI_SUCCESS: 
             return {
                 ...state,
+                ghibliChars: action.payload,
                 isFetching: false
             }
         case FETCHING_GHIBLI_ERROR:
             return {
                 ...state,
                 isFetching: false,
-                error: 'there was an error: '
+                error: 'there was an error: ' + action.payload
             }
         default:
             return state

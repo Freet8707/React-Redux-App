@@ -10,10 +10,10 @@ export const getGhibli = () => dispatch => {
     axios.get('https://ghibliapi.herokuapp.com/people')
         .then(res => {
             console.log(res.data)
-            dispatch({ type: FETCHING_GHIBLI_SUCCESS })
+            dispatch({ type: FETCHING_GHIBLI_SUCCESS, payload: res.data })
         })
         .catch(err => {
             console.log(err.message)
-            dispatch({ type: FETCHING_GHIBLI_ERROR })
+            dispatch({ type: FETCHING_GHIBLI_ERROR, payload: err.message })
         })
 };
