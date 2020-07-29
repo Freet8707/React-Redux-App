@@ -7,7 +7,9 @@ const CardHolder = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 50px;
     border: 1px dashed #a1afc0;
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -16,11 +18,13 @@ const CardHolder = styled.div`
 
 const Card = styled.div`
     width: 300px;
+    color: #594679;
+    font-weight: 650;
     margin: 50px 50px 0 50px;  
     background-color: rgba(171, 230, 244, .5);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-evenly;    
     img {
         width: 280px;
         min-height: 280px;
@@ -30,6 +34,23 @@ const Card = styled.div`
         object-fit: contain;
         overflow: auto;
     }    
+    span {
+        font-size: 20px;
+        color: #244B6F;
+    }
+`;
+
+const FetchButton = styled.button`
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 50px;
+    background-color: #0C2F44;
+    border-color: #0C2F44;
+    border-radius: 8px;
+    &:hover {
+        background-color: #72A8D6;
+    }
 `;
 
 const CharCard = (props) => {
@@ -60,6 +81,10 @@ const CharCard = (props) => {
                 alt='Ghibli character'
             />
             <h1>{props.item.name}</h1>
+            <h3><span>gender: </span>{props.item.gender}</h3>
+            <h3><span>age: </span>{props.item.age}</h3>
+            <h3><span>hair color: </span>{props.item.hair_color}</h3>
+            <h3><span>eye color: </span>{props.item.eye_color}</h3>
         </Card>
     )
 }
@@ -68,8 +93,8 @@ class GhibliCards extends React.Component {
     
     render() {
         return (
-            <div>
-                <button onClick={this.props.getGhibli}>Fetch Ghibli Characters!</button>
+            <div style={{minHeight: '100vh'}}>
+                <FetchButton onClick={this.props.getGhibli}>Fetch Ghibli Characters!</FetchButton>
                 <CardHolder>
                     {this.props.error.length > 0 ? <h2 style={{color: 'red'}}>{this.props.error}</h2> : 
                         this.props.ghibliChars.map(item => {

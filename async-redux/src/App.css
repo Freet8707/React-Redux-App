@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
 .App {
   text-align: center;
   background-image: url('./assets/659432.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: 100% 100%;
+  font-family: 'Noto Sans SC', sans-serif;
+  letter-spacing: 1px;
 }
 
 .App-logo {

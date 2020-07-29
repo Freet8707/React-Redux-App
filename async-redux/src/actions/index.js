@@ -15,9 +15,6 @@ export const getGhibli = () => dispatch => {
                     return item
                 }          
             })
-            axios.get('https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49')
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err.message))
             console.log(reducedArray)
             dispatch({ type: FETCHING_GHIBLI_SUCCESS, payload: reducedArray })
         })
