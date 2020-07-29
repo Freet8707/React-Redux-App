@@ -10,7 +10,13 @@ export const getGhibli = () => dispatch => {
     axios.get('https://ghibliapi.herokuapp.com/people')
         .then(res => {
             console.log(res.data)
-            dispatch({ type: FETCHING_GHIBLI_SUCCESS, payload: res.data })
+            const reducedArray = res.data.filter((item, index) => {
+                if(index < 20){
+                    return item
+                }          
+            })
+            console.log(reducedArray)
+            dispatch({ type: FETCHING_GHIBLI_SUCCESS, payload: reducedArray })
         })
         .catch(err => {
             console.log(err.message)
