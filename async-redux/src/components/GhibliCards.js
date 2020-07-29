@@ -48,6 +48,7 @@ const FetchButton = styled.button`
     background-color: #0C2F44;
     border-color: #0C2F44;
     border-radius: 8px;
+    outline: none;
     &:hover {
         background-color: #72A8D6;
     }
@@ -94,14 +95,16 @@ class GhibliCards extends React.Component {
     render() {
         return (
             <div style={{minHeight: '100vh'}}>
-                <FetchButton onClick={this.props.getGhibli}>Fetch Ghibli Characters!</FetchButton>
-                <CardHolder>
-                    {this.props.error.length > 0 ? <h2 style={{color: 'red'}}>{this.props.error}</h2> : 
-                        this.props.ghibliChars.map(item => {
-                            return <CharCard key={item.id} item={item} />
-                        })
-                    }
-                </CardHolder>
+                {this.props.ghibliChars.length > 0 ?
+                    <CardHolder>
+                        {this.props.error.length > 0 ? <h2 style={{color: 'red'}}>{this.props.error}</h2> : 
+                            this.props.ghibliChars.map(item => {
+                                return <CharCard key={item.id} item={item} />
+                            })
+                        }
+                    </CardHolder> :
+                    <FetchButton onClick={this.props.getGhibli}>Fetch Ghibli Characters!</FetchButton>
+                }                
             </div>
         )
     }
