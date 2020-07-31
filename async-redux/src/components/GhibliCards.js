@@ -67,7 +67,7 @@ const CharCard = (props) => {
                 props.item.name === 'Hii-sama' ? 'https://vignette.wikia.nocookie.net/studio-ghibli/images/8/83/Hii-sama.jpg/revision/latest/top-crop/width/360/height/450?cb=20181011141901' :
                 props.item.name === 'Yakul' ? 'https://www.anime-planet.com/images/characters/yakul-2702.jpg' :
                 props.item.name === 'Shishigami' ? 'https://i.pinimg.com/originals/fe/cd/3d/fecd3dfbdbe1689e437321232c24c970.jpg' :
-                props.item.name === 'Moro' ? 'https://i.pinimg.com/originals/fe/cd/3d/fecd3dfbdbe1689e437321232c24c970.jpg' :
+                props.item.name === 'Moro' ? 'https://vignette.wikia.nocookie.net/studio-ghibli/images/5/5e/Moro.png/revision/latest/top-crop/width/360/height/450?cb=20110702021519' :
                 props.item.name === 'Jiji' ? 'https://i.pinimg.com/originals/aa/98/f7/aa98f7cbdf68c550dc364c42fb0b7d3d.png' :
                 props.item.name === 'Satsuki Kusakabe' ? 'https://vignette.wikia.nocookie.net/studio-ghibli/images/e/eb/Satsuki%27s_outfit.png/revision/latest?cb=20160401030008' :
                 props.item.name === 'Mei Kusakabe' ? 'https://vignette.wikia.nocookie.net/studio-ghibli/images/6/6f/Mei.png/revision/latest?cb=20180815032007' :
