@@ -11,7 +11,7 @@ export const getGhibli = () => dispatch => {
         .then(res => {
             console.log(res.data)
             const reducedArray = res.data.filter((item, index) => {
-                if(index < 20){
+                if(index > 11 && index < 32){
                     return item
                 }          
             })
